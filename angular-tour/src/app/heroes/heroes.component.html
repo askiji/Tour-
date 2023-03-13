@@ -1,0 +1,30 @@
+<!--
+  <b> Primera opciion</b>
+  <h2>{{ heroe.name }} Details</h2>
+  <div><span>id: </span>{{ heroe.id }}</div>
+  <div><span>name: </span>{{ heroe.name }}</div>
+  <p></p>
+  <b> Segunda opcion</b>
+  <div>
+    <label for="name">Heroe name: </label>
+    <input id="name" [(ngModel)]="heroe.name" placeholder="name" />
+  </div>
+-->
+<!--
+-->
+<h2>Mis Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let iterator of heroes">
+    <button
+      [class.selected]="iterator === heroeSeleccionado"
+      type="button"
+      (click)="enSeleccion(iterator)"
+    >
+      <span class="badge">{{ iterator.id }}</span>
+      <span class="name">{{ iterator.name }}</span>
+    </button>
+  </li>
+</ul>
+<!--
+-->
+<app-detalles-heroe [heroe]="heroeSeleccionado"></app-detalles-heroe>
